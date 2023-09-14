@@ -4,12 +4,11 @@ import MainSearch from "./components/MainSearch";
 import CompanySearchResults from "./components/CompanySearchResults";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PreferList from "./components/PreferList";
-import PreferButton from "./components/PreferButton";
+// import PreferButton from "./components/PreferButton";
 
 function App() {
   return (
     <BrowserRouter>
-      <PreferButton />
       <Routes>
         <Route path="/" element={<MainSearch />} />
         <Route path="/:company" element={<CompanySearchResults />} />

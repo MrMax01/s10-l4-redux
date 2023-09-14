@@ -17,11 +17,12 @@ const Job = ({ data }) => {
         </a>
       </Col>
       <Col xs={1} className="text-end">
-        {jobFavorites.includes(data) ? (
+        {jobFavorites.some((element) => element._id === data._id) ? (
           <Button
             variant="danger"
             onClick={() => {
-              dispatch({ type: "REMOVE_TO_FAVORITES", payload: data });
+              dispatch({ type: "REMOVE_TO_FAVORITE", payload: data });
+              console.log(data);
             }}
           >
             <i className="bi bi-x-lg"></i>
@@ -30,7 +31,7 @@ const Job = ({ data }) => {
           <Button
             variant="danger"
             onClick={() => {
-              dispatch({ type: "ADD_TO_FAVORITES", payload: data });
+              dispatch({ type: "ADD_TO_FAVORITE", payload: data });
             }}
           >
             <i className="bi bi-heart"></i>

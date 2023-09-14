@@ -12,7 +12,7 @@ const mainReducer = (state = initialState, action) => {
   switch (action.type) {
     // qui dentro ci inseriremo i vari casi, per i diversi "type" con cui l'action arriverà in momenti diversi dopo una "dispatch"
 
-    case "ADD_TO_FAVORITES":
+    case "ADD_TO_FAVORITE":
       return {
         ...state,
         jobFavorites: {
@@ -21,12 +21,12 @@ const mainReducer = (state = initialState, action) => {
         },
       };
 
-    case "REMOVE_FROM_FAVORITES":
+    case "REMOVE_FROM_FAVORITE":
       return {
         ...state,
         jobFavorites: {
           ...state.jobFavorites,
-          content: state.jobFavorites.content.filter((_, i) => i !== action.payload),
+          content: state.jobFavorites.content.filter((elem) => elem._id !== action.payload._id),
         },
       };
 

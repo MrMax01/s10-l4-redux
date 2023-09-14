@@ -30,12 +30,6 @@ const mainReducer = (state = initialState, action) => {
         },
       };
 
-    case "SET_FLAG":
-      return {
-        ...state,
-        isInFavorites: action.payload,
-      };
-
     default:
       return state;
   }

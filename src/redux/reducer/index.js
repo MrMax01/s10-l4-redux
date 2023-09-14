@@ -4,7 +4,6 @@ const initialState = {
   },
 
   isInFavorites: false,
-  admin: { content: "" },
 };
 
 const mainReducer = (state = initialState, action) => {
